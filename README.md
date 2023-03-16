@@ -21,7 +21,13 @@
 - Codes  
 该目录下为arduino程序  
 ——time_correction为误差校准程序，第一次使用请先烧录该代码，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720+偏差值`  
-——wifi_main_program为主程序，需要将内部的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码
+——wifi_main_program为主程序，需要安装三个库文件
+```
+#include<ESP8266WiFi.h>
+#include<NTPClient.h>
+#include<WiFiUdp.h>
+```
+需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码
 
 ## License
 This project is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
