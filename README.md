@@ -17,10 +17,10 @@
 - 3D-model  
 3d stl 模型文件
 - Docs  
-相关的耗材清单，参考文件，图片等
+相关的耗材清单，参考文件，图片等  
 - Codes  
 该目录下为arduino程序  
-——time_correction为误差校准程序，第一次使用请先烧录该代码，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720+偏差值`  
+——time_correction为误差校准程序，第一次使用请先烧录该代码，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720+偏差值`  
 ——wifi_main_program为主程序，需要将内部的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码
 
 ## License
