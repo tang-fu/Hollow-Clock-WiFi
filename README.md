@@ -10,7 +10,7 @@
 - 该项目没有采用led灯带，喜欢的光污染的朋友可以自行diy  
 - 该项目没有采用电池供电方案，因为电机功耗较大，大约维持50~80h
 ***
-![图片展示](./Docs/Images/wificlock1.PNG)
+![图片展示](/Docs/Images/wificlock1.PNG)
 ***
 ## 项目文件说明
 
@@ -20,10 +20,7 @@
 相关的参考文件，图片等
 - Codes  
 arduino程序  
-time_correction为误差校准程序，第一次使用请先烧录该代码，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准  
-```
-STEPS_PER_ROTATION = 30720
-```
-wifi_main_program为主程序，需要将内部的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码
+time_correction为误差校准程序，第一次使用请先烧录该代码，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准
+```STEPS_PER_ROTATION = 30720```wifi_main_program为主程序，需要将内部的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码
 ## License
 This project is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
