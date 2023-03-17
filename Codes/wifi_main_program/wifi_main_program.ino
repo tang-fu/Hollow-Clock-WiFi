@@ -3,9 +3,9 @@
 #include <WiFiUdp.h>
 // 4096 * 90 / 12 = 30720 default
 #define STEPS_PER_ROTATION 30743
-const char *ssid      = "INPUT_YOUR_WIFI_ID";
-const char *password  = "INPUT_YOUR_WIFI_PASSWORD";
-//int currentHour = 0;
+const char *ssid = "INPUT_YOUR_WIFI_ID";
+const char *password = "INPUT_YOUR_WIFI_PASSWORD";
+int currentHour = 0;
 int currentMinute = 0;
 //int currentSeconds = 0;
 WiFiUDP ntpUDP;
@@ -32,30 +32,15 @@ void setup() {
   pinMode(port[1], OUTPUT);
   pinMode(port[2], OUTPUT);
   pinMode(port[3], OUTPUT);
-  rotate(-20);  // for approach run
-  rotate(20);   // approach run without heavy load
-  //rotate(STEPS_PER_ROTATION / 60);
+  rotate(-20);         // for approach run
+  rotate(20);          // approach run without heavy load
+  Get_Current_Time();  //获取当前时间
+  Time_Correction(currentHour);
 }
 
 void loop() {
-  static long prev_min = 0, prev_pos = 0;
-  long min;
-  static long pos;
-
-  min = Get_Current_Time();
-
-  if (prev_min == min) {
-    return;
-  }
-
-  prev_min = min;
-  pos = (STEPS_PER_ROTATION * min) / 60;
-  rotate(-20);  // for approach run
-  rotate(20);   // approach run without heavy load
-  if (pos - prev_pos > 0) {
-    rotate(pos - prev_pos);
-  }
-  prev_pos = pos;
+  stepper_run(currentMinute);
+  Get_Current_Time();
 }
 
 void WiFi_Begin() {
@@ -69,7 +54,7 @@ void WiFi_Begin() {
 
 int Get_Current_Time() {
   timeClient.update();
-  //currentHour = timeClient.getHours();
+  currentHour = timeClient.getHours();
   currentMinute = timeClient.getMinutes();
   //currentSeconds = timeClient.getSeconds();
   //Serial.println(currentMinute);//串口检查时间
@@ -78,6 +63,23 @@ int Get_Current_Time() {
   } else {
     return currentMinute;
   }
+}
+
+void stepper_run(long min){
+  static long prev_min = 0, prev_pos = 0;
+  static long pos;
+  if (prev_min == min) {
+    return;
+  }
+
+  prev_min = min;
+  pos = (STEPS_PER_ROTATION * min) / 60;
+  rotate(-20);  // for approach run
+  rotate(20);   // approach run without heavy load
+  if (pos - prev_pos > 0) {
+    rotate(pos - prev_pos);
+  }
+  prev_pos = pos;
 }
 
 void rotate(int step) {
@@ -98,5 +100,16 @@ void rotate(int step) {
   // power cut
   for (i = 0; i < 4; i++) {
     digitalWrite(port[i], LOW);
+  }
+}
+
+void Time_Correction(int hour) {
+  int i;
+  if(hour>12)
+  {
+    hour -= 12;
+  }
+  for (i = 0; i < hour; i++) {
+    stepper_run(60);
   }
 }
