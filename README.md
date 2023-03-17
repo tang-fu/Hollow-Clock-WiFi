@@ -19,7 +19,7 @@
 
 - 3D-model  
 3d stl 模型文件
-> 共享链接[https://a360.co/3JyfEzB](https://a360.co/3JyfEzB)
+> 预览链接[https://a360.co/3JyfEzB](https://a360.co/3JyfEzB)
 - Docs  
 相关的耗材清单，参考文件，图片等
 
@@ -41,8 +41,12 @@
 `#include<WiFiUdp.h>`  
 ***
 ## 使用说明
-1. 第一次使用请先烧录该代码`time_corrections`，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720+偏差值`
-2. 安装好库文件后，需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码，烧录后重新上电，等待连接wifi，指针会自动走向当前时间
+1. 接线说明，程序中`int port[4] = { 15, 13, 12, 14 };`对应8266引脚如下图，分别对应ULN2003驱动板`IN1,IN2,IN3,IN4`
+
+![图片展示](./Docs/Images/esp8266.png)
+
+2. 第一次使用请先烧录该代码`time_corrections`，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720 +- 偏差值`
+3. 安装好库文件后，需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码，烧录后重新上电，等待连接wifi，指针会自动走向当前时间
 
 ## License
 This project is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
