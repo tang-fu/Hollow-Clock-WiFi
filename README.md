@@ -1,6 +1,9 @@
 # Hollow-Clock-WiFi
 
-3D打印悬浮时钟，该项目原作者为[shiura](https://www.youtube.com/@shiura/about)创作的作品[Hollow-Clock-4](https://www.instructables.com/Hollow-Clock-4/)
+3D打印悬浮时钟  
+> 声明
+该项目原作者为[shiura](https://www.youtube.com/@shiura/about)创作的作品[Hollow-Clock-4](https://www.instructables.com/Hollow-Clock-4/)  
+**本项目基于原作的 CC-BY-NC-SA 4.0 协议 在原项目基础上做出改进，不用做商业用途，仅供学习参考使用**
 ***
 不得感叹原作本人的脑洞，原版的时钟是作为单机版本的装饰时钟，存有一定时间误差，且其底座结构窄，很难塞下主板以及驱动板，在此基础上，做了一些改进:  
 - 加强其实用性，增添esp8266 nodemcu wifi模块，获取网络时间自主校时，第一次使用时需要校准调整，也可以通过模块内置网页调整时间
@@ -39,6 +42,8 @@
 ## 使用说明
 1. 第一次使用请先烧录该代码`time_corrections`，并将分针和时针指向12点位置，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720+偏差值`
 2. 安装好库文件后，需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码，烧录后重新上电，等待连接wifi，指针会自动走向当前时间
+
+## 鸣谢
 
 ## License
 This project is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
