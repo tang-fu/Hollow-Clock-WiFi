@@ -50,7 +50,12 @@
 4. 如下图，分针时针均指向12点钟
 > <img src="./Docs/Images/using_example.jpg" height="534" width="400">
 ***
-##
-
+## 鸣谢
+感谢[@shiura](https://www.youtube.com/@shiura/about)原作者提供的新奇创意  
+感谢[@魔光堂_来一点光](https://space.bilibili.com/65500598)提供wifi自主校时的思路
+***
+## 赞助
+如果你觉得这个项目对你有帮助，或者你有新的想法，欢迎你在此基础上创作，并且情况允许的话，可以给我点一下star吗，总之非常感谢支持～
+***
 ## License
 This project is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
