@@ -33,7 +33,7 @@
 | 线材              | \            | \            |      |
 
 - Codes  
-该目录下为arduino程序  
+该目录下为arduino程序，需要使用`Arduino IDE`运行  
 ——time_correction为误差校准程序  
 ——wifi_main_program为主程序，需要安装三个库文件  
 `#include<ESP8266WiFi.h>`  
