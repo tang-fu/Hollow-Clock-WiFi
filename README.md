@@ -49,7 +49,7 @@
 3. 安装好库文件后，需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码，**将分针和时针指向12点位置**，烧录后重新上电，等待连接wifi，指针会自动走向当前时间
 4. 如下图，分针时针均指向12点钟
 > <img src="./Docs/Images/using_example.jpg" height="534" width="400">
-5. [视频展示，校时教程]()
+5. [视频展示，校时教程](https://www.bilibili.com/video/BV1U24y1u7f5/?spm_id_from=333.999.0.0&vd_source=2d5350a9e894031d65f0450846227793)
 ***
 ## 鸣谢
 感谢[@shiura](https://www.youtube.com/@shiura/about)原作者提供的新奇创意  
