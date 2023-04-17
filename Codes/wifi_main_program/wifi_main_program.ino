@@ -61,6 +61,9 @@ void loop() {
   if (pos - prev_pos > 0) {
     rotate(pos - prev_pos);
   }
+  if (pos < prev_pos) {
+    rotate(STEPS_PER_ROTATION / 60);
+  }
   prev_pos = pos;
 }
 
