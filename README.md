@@ -46,7 +46,7 @@ CP2102驱动下载官网:[https://www.silabs.com/interface/usb-bridges/classic/d
 
 > ![图片展示](./Docs/Images/esp8266.png)
 
-2. 第一次使用请先烧录该代码`time_corrections`，并将***分针和时针指向12点位置***，该程序会执行12次校准，最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720 +- 偏差值`
+2. 第一次使用请先烧录该代码`time_corrections`，并将***分针和时针指向12点位置***，该程序会执行12次校准，（这个过程会持续10+分钟）最终回到12点位置，通过最后的误差角度，调整主程序代码中STEPS_PER_ROTATION的数值来进行校准`STEPS_PER_ROTATION = 30720 +- 偏差值`
 3. 安装好库文件后，需要将主程序内的`INPUT_YOUR_WIFI_ID`，`INPUT_YOUR_WIFI_PASSWORD`修改为自己的WiFi名和密码，**将分针和时针指向12点位置**，烧录后重新上电，等待连接wifi，指针会自动走向当前时间
 4. 如下图，分针时针均指向12点钟
 > <img src="./Docs/Images/using_example.jpg" height="534" width="400">
